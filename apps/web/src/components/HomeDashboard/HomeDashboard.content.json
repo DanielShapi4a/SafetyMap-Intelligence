@@ -1,0 +1,36 @@
+{
+  "phaseLabel": "Phase 1: Visual Prototype",
+  "productName": "SafetyMap Intelligence",
+  "mission": "Source-backed safety intelligence for Israeli and Jewish travelers.",
+  "status": "Frontend-only skeleton",
+  "mapPanel": {
+    "title": "Placeholder map panel",
+    "type": "Map",
+    "description": "The interactive map prototype will use mock country data in a later visual milestone.",
+    "placeholder": "World map canvas placeholder. Live sources and geospatial services are intentionally not connected yet."
+  },
+  "countryPanel": {
+    "title": "Country intelligence",
+    "type": "Intel",
+    "description": "Static country panel surface for the first dashboard shell.",
+    "items": [
+      {
+        "label": "Selected country",
+        "value": "Mock profile pending"
+      },
+      {
+        "label": "Risk context",
+        "value": "Static placeholder only"
+      },
+      {
+        "label": "Source status",
+        "value": "No live ingestion connected"
+      }
+    ]
+  },
+  "incidentsPanel": {
+    "title": "Recent incidents",
+    "type": "Timeline",
+    "description": "Timeline placeholder for future mock incident cards. No crawler, AI, or database is active."
+  }
+}

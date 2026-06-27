@@ -1,0 +1,4 @@
+interface:
+  display_name: "SafetyMap Frontend"
+  short_description: "Build frontend with styled-components"
+  default_prompt: "Use -frontend to implement the next SafetyMap web UI task."

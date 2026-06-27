@@ -75,6 +75,13 @@ Apply these conventions once code exists:
 - Prefer type-only imports where possible.
 - Add MapLibre GL JS only when the map prototype phase begins.
 
+## Content Conventions
+
+- Do not hard-code user-facing text directly inside JSX.
+- Store UI copy in structured JSON files with the needed keys and text.
+- Import typed content data into components and render from that structure.
+- Keep JSON content names clear and close to the feature they support.
+
 ## Styling Conventions
 
 - This project uses `styled-components` for web styling.

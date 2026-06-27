@@ -1,0 +1,4 @@
+interface:
+  display_name: "SafetyMap Context"
+  short_description: "Load project docs and phase guardrails"
+  default_prompt: "Use -context to orient on the SafetyMap repository before making changes."

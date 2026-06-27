@@ -1,0 +1,4 @@
+interface:
+  display_name: "SafetyMap Review"
+  short_description: "Review SafetyMap changes against scope"
+  default_prompt: "Use -code-review to review my SafetyMap changes before commit."
