@@ -12,7 +12,7 @@ Use the following phased stack:
 
 - pnpm monorepo.
 - Next.js + TypeScript web app first.
-- vanilla-extract for styling.
+- styled-components for styling.
 - Radix UI primitives later for accessible UI behavior.
 - MapLibre GL JS later for the interactive map.
 - NestJS API later.
@@ -29,21 +29,32 @@ Use the following phased stack:
 - The first visual milestone should remain frontend-only and mock-data driven.
 - Do not use Tailwind CSS.
 - Do not use shadcn/ui.
-- Do not introduce styled-components unless a future ADR explicitly changes this decision.
+- Do not use vanilla-extract unless a future ADR explicitly changes this decision.
 
 ## Styling Decision
 
-Use `vanilla-extract` for application styling.
+Use `styled-components` for web styling.
 
-The project owner prefers readable colocated TypeScript style files. vanilla-extract matches the desired component structure:
+The project owner prefers readable semantic JSX. The desired component style is:
+
+```tsx
+<Phase>Phase 1: Visual Prototype</Phase>
+<DashboardPanel>
+  <PanelTitle>Country Intelligence</PanelTitle>
+</DashboardPanel>
+```
+
+styled-components matches that preference better than Tailwind CSS or vanilla-extract. Tailwind CSS is powerful, but it would make JSX class-heavy. vanilla-extract is type-safe and static, but it normally uses `className={styles.name}`.
+
+The project accepts the small Next.js setup cost for improved readability and maintainability. Responsive design is fully supported through normal CSS media queries and shared breakpoint tokens.
+
+Use colocated style files:
 
 ```text
 CountryPanel/
   CountryPanel.tsx
-  CountryPanel.css.ts
+  CountryPanel.styles.ts
   index.ts
 ```
 
-This gives the project type-safe, zero-runtime CSS while avoiding Tailwind class-heavy markup. It also avoids the runtime styling registry complexity that styled-components introduces in Next.js App Router projects.
-
-Radix UI can be added later for accessible, unstyled primitives. Those primitives should be styled with vanilla-extract.
+Radix UI can be added later for accessible, unstyled primitives. Those primitives should be styled with styled-components.

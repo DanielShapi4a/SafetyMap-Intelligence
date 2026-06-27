@@ -17,7 +17,7 @@ explicitly advanced.
 
 - Package manager and workspace: pnpm monorepo.
 - First app: Next.js + TypeScript web app.
-- Styling: vanilla-extract.
+- Styling: styled-components.
 - Accessible UI primitives: Radix UI later, after the base shell exists.
 - Map library: MapLibre GL JS later, when the interactive map prototype begins.
 - API: NestJS later.
@@ -77,15 +77,19 @@ Apply these conventions once code exists:
 
 ## Styling Conventions
 
-- This project uses `vanilla-extract` for styling.
-- Use colocated style files named `<ComponentName>.css.ts`.
-- Import component styles as `import * as styles from './ComponentName.css';`.
+- This project uses `styled-components` for web styling.
+- Use colocated style files named `<ComponentName>.styles.ts`.
+- Import styles as named styled components, for example: `import { Phase, Panel, Title } from './HeroSection.styles';`.
+- Prefer semantic styled components over large inline `className` strings.
 - Do not use Tailwind CSS.
 - Do not use shadcn/ui.
-- Do not introduce styled-components unless a future ADR explicitly changes this decision.
-- Shared theme tokens live under `apps/web/src/styles/`.
-- Prefer readable style objects over overly clever abstractions.
-- Use Radix UI primitives later for accessible UI behavior, but style them with vanilla-extract.
+- Do not use vanilla-extract unless a future ADR explicitly changes this decision.
+- Shared theme tokens should live under `apps/web/src/styles/`.
+- Shared responsive breakpoints should live under `apps/web/src/styles/breakpoints.ts`.
+- Use a typed styled-components theme when the app skeleton is initialized.
+- Do not declare styled components inside React render functions.
+- Use Radix UI later only for accessible behavior primitives, styled through styled-components.
+- Responsive design should be handled with normal CSS media queries using shared breakpoint tokens.
 
 ## Backend And Workers
 

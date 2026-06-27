@@ -1,12 +1,12 @@
 # Architecture
 
-SafetyMap Intelligence will be built in phases. The first coding phase should create only the pnpm monorepo skeleton, Next.js + TypeScript web app, vanilla-extract styling setup, and basic formatting/linting configuration.
+SafetyMap Intelligence will be built in phases. The first coding phase should create only the pnpm monorepo skeleton, Next.js + TypeScript web app, styled-components setup, and basic formatting/linting configuration.
 
 ## Initial Stack
 
 - Package management: pnpm monorepo.
 - First app: Next.js + TypeScript web app.
-- Styling: vanilla-extract.
+- Styling: styled-components.
 - Accessible UI primitives: Radix UI later.
 - Map: MapLibre GL JS later.
 - API: NestJS later.
@@ -45,13 +45,13 @@ For the first visual milestone, the web app should use static mock country data 
 
 ## Styling Direction
 
-Component styles should use colocated vanilla-extract files:
+Component styles should use colocated styled-components files:
 
 ```text
 CountryPanel/
   CountryPanel.tsx
-  CountryPanel.css.ts
+  CountryPanel.styles.ts
   index.ts
 ```
 
-Shared theme tokens should live under `apps/web/src/styles/` once the web app exists. Do not use Tailwind CSS, shadcn/ui, or styled-components unless a future ADR explicitly changes this decision.
+Shared theme tokens should live under `apps/web/src/styles/` once the web app exists. Shared responsive breakpoints should live under `apps/web/src/styles/breakpoints.ts`. Do not use Tailwind CSS, shadcn/ui, or vanilla-extract unless a future ADR explicitly changes this decision.
