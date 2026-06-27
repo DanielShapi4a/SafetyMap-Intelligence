@@ -8,10 +8,12 @@ The repository is currently in the documentation foundation phase. The app has n
 
 - Start with a pnpm monorepo.
 - Build the first app as a Next.js + TypeScript web dashboard.
-- Use Tailwind CSS for styling.
-- Add shadcn/ui and MapLibre GL JS after the dashboard shell exists.
+- Use vanilla-extract for styling.
+- Add Radix UI primitives later for accessible UI behavior.
+- Add MapLibre GL JS after the dashboard shell exists.
 - Add NestJS, PostgreSQL/PostGIS, Python workers, Redis, and real ingestion in later phases.
 - Use Docker Compose before any Kubernetes work.
+- Do not use Tailwind CSS, shadcn/ui, or styled-components unless a future ADR changes this.
 
 ## First Visual Milestone
 

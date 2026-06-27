@@ -15,15 +15,17 @@ Status: current.
 
 - Initialize pnpm workspace.
 - Add Next.js + TypeScript web app.
-- Add Tailwind CSS.
+- Add vanilla-extract styling setup.
 - Add basic formatting/linting configuration.
 - Do not add backend, database, worker, ingestion, AI, Redis, or Kubernetes code.
+- Do not add Tailwind CSS, shadcn/ui, or styled-components.
 
 ## Phase 3: Web Dashboard Shell
 
 - Create the dashboard layout.
 - Add navigation and main content regions.
 - Add static country intelligence surfaces using mock data.
+- Use colocated `<ComponentName>.css.ts` style files.
 - Keep the app frontend-only.
 
 ## Phase 4: Mock Data Map Prototype

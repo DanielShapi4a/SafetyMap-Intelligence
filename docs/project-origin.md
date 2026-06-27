@@ -86,8 +86,8 @@ Instead of rebuilding the project with the same technologies used in the origina
 
 * pnpm monorepo for workspace management
 * Next.js + TypeScript for the web application
-* Tailwind CSS for styling
-* shadcn/ui later, after the base dashboard shell exists
+* vanilla-extract for colocated TypeScript style files
+* Radix UI primitives later for accessible UI behavior
 * MapLibre GL JS later, when the map prototype phase begins
 * NestJS for a structured backend API
 * PostgreSQL + PostGIS for geospatial and relational data
@@ -95,6 +95,8 @@ Instead of rebuilding the project with the same technologies used in the origina
 * Redis for queues and caching
 * Docker Compose for local infrastructure
 * Kubernetes only later, when the system is mature enough to justify it
+
+The styling direction intentionally avoids Tailwind CSS, shadcn/ui, and styled-components unless a future ADR changes that decision.
 
 The project should be built gradually and intentionally.
 

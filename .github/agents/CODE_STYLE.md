@@ -17,8 +17,8 @@ explicitly advanced.
 
 - Package manager and workspace: pnpm monorepo.
 - First app: Next.js + TypeScript web app.
-- Styling: Tailwind CSS.
-- UI library: shadcn/ui later, after the base shell exists.
+- Styling: vanilla-extract.
+- Accessible UI primitives: Radix UI later, after the base shell exists.
 - Map library: MapLibre GL JS later, when the interactive map prototype begins.
 - API: NestJS later.
 - Database: PostgreSQL + PostGIS later.
@@ -73,9 +73,19 @@ Apply these conventions once code exists:
 - Use TypeScript with strict settings.
 - Use Next.js App Router conventions when the web app is initialized.
 - Prefer type-only imports where possible.
-- Use Tailwind CSS for styling.
-- Add shadcn/ui only after the base UI shell exists.
 - Add MapLibre GL JS only when the map prototype phase begins.
+
+## Styling Conventions
+
+- This project uses `vanilla-extract` for styling.
+- Use colocated style files named `<ComponentName>.css.ts`.
+- Import component styles as `import * as styles from './ComponentName.css';`.
+- Do not use Tailwind CSS.
+- Do not use shadcn/ui.
+- Do not introduce styled-components unless a future ADR explicitly changes this decision.
+- Shared theme tokens live under `apps/web/src/styles/`.
+- Prefer readable style objects over overly clever abstractions.
+- Use Radix UI primitives later for accessible UI behavior, but style them with vanilla-extract.
 
 ## Backend And Workers
 
